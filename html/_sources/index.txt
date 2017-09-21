@@ -1,0 +1,156 @@
+.. LaTeX Resources documentation master file, created by
+   sphinx-quickstart on Fri May 26 08:35:24 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Some :math:`\LaTeX` resources
+*******************************
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+Introduction
+================
+
+We have gathered here some information and links on many useful packages and other aspects of :math:`\LaTeX`. For many there are links back to the online guides provided by the ShareLaTeX site itself.
+
+Initial workshop handout and :math:`\LaTeX` guide
+-------------------------------------------------
+
+* The link to a pdf copy of the initial `workshop handout is here <https://cocalc.com/a3801a5c-c6a5-4856-9e32-b6a99a7d2600/raw/latexworkshop/docs/latexworkshop.pdf>`_.
+* The link to a pdf copy of the bound :math:`\LaTeX` `guide is here <https://cocalc.com/a3801a5c-c6a5-4856-9e32-b6a99a7d2600/raw/latexworkshop/docs/LaTeX_guide.pdf>`_ .
+
+Science and Engineering related packages
+========================================
+
+Referencing: citations and bibliography
+---------------------------------------
+
+Good academic writing needs to cite the published works it draws upon and present their bibliographic details in a clear consistent fashion. For short pieces with few references this might be done manually. But for writing of any substantial length it's a good idea to use referencing software and bibliographic databases.
+
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/BiblatexRefA.png/500px-BiblatexRefA.png
+   :width: 400px
+
+
+:math:`\LaTeX` incorporates a simple referencing system but for added functionality you can use the `biblatex package <https://www.ctan.org/pkg/biblatex?lang=en>`_. The `ShareLaTex guide <https://www.sharelatex.com/learn/Bibliography_management_in_LaTeX>`_ is a good place to start. The author-year citation styles in biblatex are very similar to the Harvard referencing style recommended by Man Met. Full details can be found in the `biblatex manual <http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf>`_.
+
+Note that the EndNote bibliography management software can export bibliographic databases in the necessary bibtex format to allow them to be imported into biblatex. Most online publication databases can also do this, including the Man Met `library catalogue <http://www.library.mmu.ac.uk/>`_, see the screenshot below.
+
+.. figure:: /bibtex.png
+   :width: 400px
+
+Let :math:`\LaTeX` draw your diagrams!
+--------------------------------------
+
+Precise diagrams can really enhance all sorts of academic writing. Standard image files can be inserted into a latex document using the ``\includegraphics`` command of the `graphicx package <https://www.sharelatex.com/learn/Inserting_Images>`_. The `TikZ package <http://www.texample.net/tikz/>`_ provides a programming language for drawing diagrams that is used within your LaTeX sourcefile. TikZ allows you to get your diagrams to look professional on the page. You have complete control over all aspects of the diagram and test labels will be consistent with the rest of your document. It is an ideal tool for developing and updating complex technical diagrams. It even includes its own minimal programming language for algorithmically generating your diagram.
+
+.. figure:: /tikz.png
+   :width: 400px
+
+
+Get started using the ShareLaTeX `guide to Tikz <https://www.sharelatex.com/learn/TikZ_package>`_. Check out this `TikZ gallery <http://www.texample.net/tikz/examples/>`_ for a showcase of TikZ's capabilities. Full details can be found in the mammoth `Tikz manual <http://anorien.csc.warwick.ac.uk/mirrors/CTAN/graphics/pgf/base/doc/pgfmanual.pdf>`_. Included in the manual are details on the many subject specific TikZ libraries.
+
+Chemical diagrams
+-----------------
+
+The `chemfig <http://www.ctan.org/pkg/chemfig>`_ package allows you to typeset chemical diagrams.
+
+.. figure:: https://www.sharelatex.com/learn-scripts/images/0/0b/ChemestryFormulaeEx5.png
+   :width: 400px
+
+Get started with the `ShareLaTeX guide <https://www.sharelatex.com/learn/Chemistry_formulae>`_.
+
+
+Powerpoint-style Beamer presentations
+-------------------------------------
+
+`Beamer <https://github.com/josephwright/beamer>`_ is a package to enable :math:`\LaTeX` to produce power-point style slide presentations. If your slides will contain lots of typeset mathematics or you want to use the other capabilities of :math:`\LaTeX` in your slides then try using Beamer.
+
+.. figure:: https://image.slidesharecdn.com/beamerclassexample-121011213219-phpapp01/95/beamer-classexample-6-728.jpg
+   :width: 400px
+
+Get started with the ShareLaTeX `Beamer guide <https://www.sharelatex.com/learn/Beamer>`_ or see the `Beamer manual <http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf>`_ for full details.
+
+
+
+Displaying computer code
+-------------------------
+
+You may want to display computer code in your document. There are various conventions about how computer code should be presented on the page or screen in order to make it legible and easy to understand. The conventions include how various parts of the code should be indented and how to colour the different elements of the code such as function names, user defined variables, language keywords, comments etc.
+
+::
+
+    def xgcd(b, n):
+        x0, x1, y0, y1 = 1, 0, 0, 1
+        while n != 0:
+            q, b, n = b // n, n, b % n
+            x0, x1 = x1, x0 - q * x1
+            y0, y1 = y1, y0 - q * y1
+        return  b, x0, y0
+
+The `listings <http://www.ctan.org/tex-archive/macros/latex/contrib/listings/>`_ package will take care of implementing these conventions so that your plain-text code looks good on the page or screen. The `ShareLaTeX guide <https://www.sharelatex.com/learn/Code_listing>`_ provides some basic instructions. Full details can be found in the listings `manual <http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/listings/listings.pdf>`_.
+
+Algorithm specifications or *pseudo-code*
+-----------------------------------------
+
+In computer science and mathematics we sometimes like to discuss the design and performance of algorithms in a general way, not any particular implementation of them in a specific programming language.
+
+.. figure:: https://zhenhu.files.wordpress.com/2013/06/algo.png
+   :width: 400px
+
+There are conventions about how to present such algorithms and the `algorithm2e package <https://www.ctan.org/pkg/algorithm2e?lang=en>`_ allows you to easily produce such presentations in your documents. See the `ShareLaTeX guide <https://www.sharelatex.com/learn/Algorithms>`_ or the `algorthm2e manual <http://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf>`_ for details.
+
+Full control of your page design
+--------------------------------
+
+The default settings in :math:`\LaTeX` for the design of the page (margin widths, header and footer widths, line-length, ...) are designed for good readability and aesthetic reasons.
+
+.. figure:: https://cduu.files.wordpress.com/2011/01/latex_margins.png
+   :width: 400px
+
+However if you want to make your own decisions about how the text is arranged on the page then the `geometry package <https://www.ctan.org/pkg/geometry?lang=en>`_ gives you full access to all of these settings. Get started with the `ShareLaTeX guide <https://www.sharelatex.com/learn/Page_size_and_margins>`_ or consult the `geometry manual <http://anorien.csc.warwick.ac.uk/mirrors/CTAN/macros/latex/contrib/geometry/geometry.pdf>`_ for full details.
+
+Page headers and footers
+------------------------
+
+You can customize the headers and footers of your documents using various commands. The `ShareLaTeX guide <https://www.sharelatex.com/learn/Headers_and_footers>`_ shows you how to get started and by using the `fancyhdr package <https://www.ctan.org/pkg/fancyhdr>`_ you can gain full control of these aspects of the page design. Full details in the `fancyhdr manual <http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/fancyhdr/fancyhdr.pdf>`_.
+
+
+Other resources
+===============
+
+CoCalc
+------
+`CoCalc <https://cocalc.com/>`_ (formally known as SageMathCloud) is an online computing environment that brings together many open-source software tools such as SageMath (mathematical software), R (statistical software), Python (general computing language) and Jupyter notebooks, and many other programming and software tools. It also includes a full-featured LaTeX editor much like that of ShareLaTeX. Basic accounts are free on CoCalc and it is an excellent resource for exploring open-source mathematical software and computation in the cloud.
+
+.. figure:: https://static.cocalc.com/9ea5d6aa3efb0a1dc9b409d84170a917.png
+   :width: 400px
+
+.. figure:: https://storage.googleapis.com/cocalc-extra/smc-latex-20170516.png
+   :width: 400px
+
+Pandoc
+------
+
+`Pandoc <http://pandoc.org/>`_ is a piece of software than can convert between many markup languages, including LaTeX and the Microsoft docx format. It's a command line tool but versions are available for the major operating systems. It's included on the CoCalc online computing environment.
+
+``pandoc mydocument.tex -o mydocument.docx``
+
+Typesetting chess games
+------------------------
+.. figure:: https://cdn.sharelatex.com/learn-scripts/images/1/14/ChessNotationEx6.png
+   :scale: 20 %
+
+You can create professional looking annotated chess games with diagrams using the `skak <https://www.ctan.org/pkg/skak?lang=en>`_ package. A good guide to getting started can be found in ShareLaTeX's own `Chess notation <https://www.sharelatex.com/learn/Chess_notation>`_ guide.
+
+Don Knuth
+=========
+
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/4/4f/KnuthAtOpenContentAlliance.jpg
+   :width: 400px
+
+`Don Knuth <http://www-cs-faculty.stanford.edu/~uno/>`_ is a famous American computer scientist and mathematician. In the 1980's he wrote the :math:`\TeX` typesetting system, on which :math:`\LaTeX` is based. It's through his work that mathematicians and others have been able to produce professional quality typeset technical documents on their own computers. In keeping the :math:`\TeX` system open-source he enabled it to become the rich ecosystem that it is today.
+
+Knuth is also well known for his authoritative writings in computer science in his multi-volume work `The Art of Computer Programming <https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming>`_.
